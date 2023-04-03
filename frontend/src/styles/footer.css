@@ -1,0 +1,18 @@
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    padding: 1rem;
+    background-color: var(--dark-color);
+    border-top: 0.25rem solid var(--black-color);
+}
+
+footer #logo {
+    max-width: 10rem;
+}
+
+footer .nav-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}

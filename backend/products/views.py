@@ -14,13 +14,3 @@ def getProducts(request):
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 
-@api_view(['GET'])
-def getProduct(request, pk):
-    product = Product.objects.get(id=pk)
-    serializer = ProductSerializer(product, many=False)
-    for i in product:
-        if i['id'] == pk:
-            product = i
-            break
-    return Response(serializer.data)
-

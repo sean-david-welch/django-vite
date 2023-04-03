@@ -1,0 +1,20 @@
+header {
+    margin: 1rem;
+}
+
+header #logo {
+    max-width: 10rem;
+}
+
+#navbar nav {
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+}
+
+#navbar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
