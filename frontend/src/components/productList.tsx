@@ -27,7 +27,6 @@ function ProductList() {
 
     return (
         <section id="products">
-            <h1>Products</h1>
             <div className="products">
                 <ul>
                     {products.map(product => (

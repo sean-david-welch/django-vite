@@ -2,13 +2,21 @@
     padding: 2rem;
 }
 
-#products .products {
+#products .products ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    margin: 0 auto;
 }
 
 #products .products img {
-    max-width: 40rem;
+    max-width: 20rem;
     border-radius: 1rem;
     border: 0.25rem solid var(--black-color);
+}
+
+#products .products p {
+    font-size: 1rem;
+    margin: 0 5rem;
+    text-align: center;
 }
