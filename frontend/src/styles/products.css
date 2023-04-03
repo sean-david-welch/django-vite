@@ -1,0 +1,14 @@
+#products {
+    padding: 2rem;
+}
+
+#products .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+}
+
+#products .products img {
+    max-width: 40rem;
+    border-radius: 1rem;
+    border: 0.25rem solid var(--black-color);
+}

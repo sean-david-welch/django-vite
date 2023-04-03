@@ -1,5 +1,8 @@
 header {
-    margin: 1rem;
+    width: 100vw;
+    padding: 1rem;
+    border-bottom: 0.15rem solid var(--black-color);
+    background-color: var(--dark-color);
 }
 
 header #logo {

@@ -29,7 +29,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    background-color: var(--dark-color);
+    background-color: var(--black-color);
     border-radius: 10px;
 }
 
@@ -51,6 +51,12 @@ a {
 
 ul {
     list-style: none;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0 auto;
 }
 
 /* Buttons */

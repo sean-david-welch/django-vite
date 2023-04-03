@@ -4,7 +4,7 @@ footer {
     width: 100vw;
     padding: 1rem;
     background-color: var(--dark-color);
-    border-top: 0.25rem solid var(--black-color);
+    border-top: 0.15rem solid var(--black-color);
 }
 
 footer #logo {

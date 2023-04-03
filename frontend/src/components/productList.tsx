@@ -26,22 +26,25 @@ function ProductList() {
     }, []);
 
     return (
-        <div>
+        <section id="products">
             <h1>Products</h1>
-            <ul>
-                {products.map(product => (
-                    <li key={product.id}>
-                        <h2>{product.name}</h2>
-                        <p>{product.description}</p>
-                        <p>Price: {product.price}</p>
-                        <img
-                            src={`${url}/${product.image}`}
-                            alt={product.name}
-                        />
-                    </li>
-                ))}
-            </ul>
-        </div>
+            <div className="products">
+                <ul>
+                    {products.map(product => (
+                        <li key={product.id}>
+                            <h2>
+                                {product.name} <br></br> Price: €{product.price}
+                            </h2>
+                            <img
+                                src={`${url}/${product.image}`}
+                                alt={product.name}
+                            />
+                            <p>{product.description}</p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
     );
 }
 

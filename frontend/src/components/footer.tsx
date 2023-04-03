@@ -24,7 +24,7 @@ function Footer() {
                     <img src="/logo.png" alt="Logo" id="logo" />
                 </a>
                 <ul>
-                    <li>Proshops Ltd.</li>
+                    <li>Primal Formulas Ltd.</li>
                     <li>Clonross, Drumree</li>
                     <li>Co. Meath,</li>
                     <li>A85 PK30</li>

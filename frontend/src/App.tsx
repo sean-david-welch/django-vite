@@ -11,7 +11,6 @@ function App() {
         <div>
             <Header />
             <main>
-                <h1>Welcome to ProShops!</h1>
                 <ProductList />
             </main>
             <Footer />
