@@ -1,10 +1,13 @@
 import React from 'react';
+import Layout from '../components/layout';
 
 export const Login = () => {
     return (
-        <div>
-            <h1>Login</h1>
-        </div>
+        <Layout>
+            <section id="login">
+                <h1>Login</h1>
+            </section>
+        </Layout>
     );
 };
 

@@ -1,10 +1,13 @@
 import React from 'react';
+import Layout from '../components/layout';
 
 export const Cart = () => {
     return (
-        <div>
-            <h1>Cart</h1>
-        </div>
+        <Layout>
+            <section id="cart">
+                <h1>Cart</h1>
+            </section>
+        </Layout>
     );
 };
 
