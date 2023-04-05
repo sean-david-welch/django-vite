@@ -2,9 +2,10 @@
 import React from 'react';
 import useProductList from '../hooks/useProductList';
 import Layout from '../components/layout';
+import { BASE_URL } from '../utils/config';
 
 export const Products = () => {
-    const { products, url } = useProductList();
+    const { products } = useProductList();
 
     return (
         <Layout>
@@ -15,7 +16,7 @@ export const Products = () => {
                             <li key={product.id}>
                                 <h2>{product.name}</h2>
                                 <img
-                                    src={`${url}/${product.image}`}
+                                    src={`${BASE_URL}/${product.image}`}
                                     alt={product.name}
                                 />
                                 <h2>Price: €{product.price}</h2>
