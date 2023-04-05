@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from '/assets/logo.png';
+import { Link } from 'react-router-dom';
+import logo from '/logo.png';
 
 function Header() {
     return (
         <header>
             <nav id="navbar">
                 <a href="#">
-                    <img src="/logo.png" alt="Logo" id="logo" />
+                    <img src={logo} alt="Logo" id="logo" />
                 </a>
                 <ul className="nav-list">
                     <li className="nav-item">
-                        <a href="#">Home</a>
+                        <Link to="/about">About</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="#">About</a>
+                        <Link to="/products">Products</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="#">Products</a>
+                        <Link to="/cart">Cart</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="#">Cart</a>
+                        <Link to="/login">Login</Link>
                     </li>
                 </ul>
             </nav>

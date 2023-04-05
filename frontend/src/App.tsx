@@ -1,19 +1,22 @@
-import { useState } from 'react';
-
-import Header from './components/header';
-import Footer from './components/footer';
-import ProductList from './components/productList';
-
-import './styles/App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Products from './Products';
+import Cart from './Cart';
+import Login from './LoginPage';
 
 function App() {
     return (
-        <div>
-            <Header />
-            <main>
-                <ProductList />
-            </main>
-            <Footer />
+        <div className="App">
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/products" element={<Products />} />
+                    <Route path="/cart" element={<Cart />} />
+                    <Route path="/login" element={<Login />} />
+                </Routes>
+            </Router>
         </div>
     );
 }

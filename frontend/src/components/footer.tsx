@@ -1,4 +1,5 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '/logo.png';
 
 function Footer() {
     return (
@@ -6,22 +7,22 @@ function Footer() {
             <div className="footer-navigation">
                 <ul className="nav-list">
                     <li className="nav-item">
-                        <a href="#">Home</a>
+                        <Link to="/about">About</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="#">About</a>
+                        <Link to="/products">Products</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="#">Products</a>
+                        <Link to="/cart">Cart</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="#">Cart</a>
+                        <Link to="/login">Login</Link>
                     </li>
                 </ul>
             </div>
             <div className="footer-information">
                 <a href="#">
-                    <img src="/logo.png" alt="Logo" id="logo" />
+                    <img src={logo} alt="Logo" id="logo" />
                 </a>
                 <ul>
                     <li>Primal Formulas Ltd.</li>
