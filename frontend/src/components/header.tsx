@@ -5,9 +5,9 @@ function Header() {
     return (
         <header>
             <nav id="navbar">
-                <a href="#">
+                <Link to="/">
                     <img src={logo} alt="Logo" id="logo" />
-                </a>
+                </Link>
                 <ul className="nav-list">
                     <li className="nav-item">
                         <Link to="/about">About</Link>

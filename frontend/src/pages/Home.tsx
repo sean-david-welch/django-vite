@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from './components/header';
-import Footer from './components/footer';
-import ProductList from './components/productList';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import ProductList from '../utils/productList';
 
 export const Home = () => {
     return (
