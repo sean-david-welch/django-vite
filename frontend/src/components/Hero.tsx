@@ -9,9 +9,11 @@ export const Hero = () => {
         <div className="hero">
             <div className="overlay" />
             <video src={hero1} autoPlay loop muted />
-            <h1 className="hero-head">The foundation for Health & Wellness</h1>
+            <h1 className="hero-head">
+                The foundation for Health & Performance
+            </h1>
             <p className="hero-para">
-                Reach your true health potential with our comprehnsive formulas
+                Reach your wellness potential with our comprehnsive formulas
             </p>
             <button className="btn btn-primary btn-nav btn-hero">
                 <Link to="/products">

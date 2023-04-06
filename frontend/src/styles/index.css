@@ -61,27 +61,24 @@ p {
 
 /* Button */
 .icon {
+    align-items: center;
     margin-left: 1rem;
     font-size: 1.25rem;
 }
 
 .btn {
-    padding: 0.25rem 3rem;
+    padding: 0.5rem 2.5rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: 1.25rem;
     cursor: pointer;
     text-decoration: none;
     transition: all 0.5s linear;
     font-size: 1rem;
-    font-weight: 600;
 }
 
 .btn-nav {
-    background: none;
-    border: none;
     display: flex;
     justify-content: center;
-    padding: 0.5rem 3rem;
 }
 
 .btn-hero {
