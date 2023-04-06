@@ -5,18 +5,18 @@ function Header() {
     return (
         <header>
             <nav id="navbar">
-                <Link to="/">
-                    <img src={logo} alt="Logo" id="logo" />
-                </Link>
                 <ul className="nav-list">
+                    <li className="nav-item">
+                        <Link to="/">Home</Link>
+                    </li>
                     <li className="nav-item">
                         <Link to="/about">About</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/products">Products</Link>
+                        <Link to="/cart">Cart</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/cart">Cart</Link>
+                        <Link to="/products">Products</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="/login">Login</Link>
