@@ -1,23 +1,36 @@
 header {
     width: 100vw;
-    padding: 1rem;
-    border-bottom: 0.15rem solid var(--black-color);
-    background-color: var(--dark-color);
 }
 
 header #logo {
-    max-width: 10rem;
+    display: flex;
+    max-width: 5rem;
 }
 
-#navbar nav {
-    display: flex;
+#navbar {
+    z-index: 10000;
+    background-color: var(--dark-color);
+    border-bottom: 0.15rem solid var(--black-color);
+    position: fixed;
+    top: 0;
+    padding: 1rem;
     width: 100vw;
-    justify-content: space-evenly;
+    transition: background 300ms;
+}
+
+#navbar.transparent {
+    background: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: background 300ms;
+    border-bottom: none;
 }
 
 #navbar ul {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
 }

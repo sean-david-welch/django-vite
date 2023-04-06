@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import hero1 from '../assets/hero1.mp4';
-import hero2 from '../assets/hero2.mp4';
-import logo from '/logo.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 export const Hero = () => {
     return (
         <div className="hero">
             <div className="overlay" />
             <video src={hero1} autoPlay loop muted />
-            <Link to="/">
-                <img src={logo} alt="Logo" id="logo" />
-            </Link>
+            <h1 className="hero-head">The foundation for Health & Wellness</h1>
+            <p className="hero-para">
+                Reach your true health potential with our comprehnsive formulas
+            </p>
+            <button className="btn btn-primary btn-nav btn-hero">
+                <Link to="/products">
+                    Shop Primal Formulas
+                    <FontAwesomeIcon icon={faArrowRight} className="icon" />
+                </Link>
+            </button>
         </div>
     );
 };

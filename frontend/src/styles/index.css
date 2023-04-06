@@ -59,7 +59,44 @@ p {
     margin: 0 auto;
 }
 
-/* Buttons */
+/* Button */
+.icon {
+    margin-left: 1rem;
+    font-size: 1.25rem;
+}
+
+.btn {
+    padding: 0.25rem 3rem;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.5s linear;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-nav {
+    background: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 3rem;
+}
+
+.btn-hero {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.btn-primary {
+    color: var(--light-color);
+    background-color: var(--dark-color);
+    font-weight: 500;
+}
 
 /* Miscellaeneous */
 .text-center {
