@@ -78,10 +78,7 @@ p {
 }
 
 .btn-nav {
-    display: flex;
-    justify-content: center;
     padding: 0.5rem 2.5rem;
-    align-items: center;
     font-size: 1.1rem;
     font-weight: 300;
 }
@@ -91,7 +88,7 @@ p {
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10000;
+    z-index: 1000;
 }
 
 .btn-primary {
@@ -141,4 +138,8 @@ button.instagram {
 
 button.website {
     background-color: #7ea7ff;
+}
+
+a.youtube:hover {
+    color: #ff0000;
 }

@@ -16,3 +16,10 @@ footer .nav-list {
     flex-direction: row;
     justify-content: space-evenly;
 }
+
+footer .socials {
+    margin: 0 0.75rem;
+    line-height: 100px;
+    text-align: center;
+    transition: all 0.3s linear;
+}
