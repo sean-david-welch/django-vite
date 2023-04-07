@@ -3,6 +3,7 @@
 @import 'footer.css';
 @import 'products.css';
 @import 'hero.css';
+@import 'sideNavbar.css';
 
 .App {
     max-width: 100vw;

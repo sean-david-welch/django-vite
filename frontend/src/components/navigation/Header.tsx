@@ -1,5 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,18 +13,19 @@ import useTransparentHeader from '../../hooks/useTransparentHeader';
 import NavItem from './NavItem';
 import NavButton from './NavButton';
 
+import SideNavbar from './SideNavBar';
+
 function Header() {
     const isTransparent = useTransparentHeader();
 
     return (
         <header>
+            <SideNavbar />
             <nav id="navbar" className={isTransparent ? 'transparent' : ''}>
                 <ul className="nav-list">
                     <Link to="/">
                         <img src={logo} id="logo" alt="Logo" />
                     </Link>
-                    <NavItem to="/about">About</NavItem>
-                    <NavItem to="/">Ingredients & Benefits</NavItem>
                     <NavButton
                         to="/products"
                         icon={

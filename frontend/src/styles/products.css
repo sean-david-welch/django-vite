@@ -1,6 +1,9 @@
 #products {
-    margin: 7rem auto 3rem auto;
     padding: 2rem;
+}
+
+#products .products {
+    margin: 7rem auto 3rem auto;
 }
 
 #products .products ul {
