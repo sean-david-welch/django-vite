@@ -1,5 +1,12 @@
 import { Link, useLocation } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faCartShopping,
+    faCircleUser,
+    faArrowRight,
+} from '@fortawesome/free-solid-svg-icons';
+
 import logo from '/logo.png';
 
 function Header() {
@@ -28,19 +35,31 @@ function Header() {
                         <img src={logo} id="logo" alt="Logo" />
                     </Link>
                     <li className="nav-item">
-                        <Link to="/">Ingredients & Benefits</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link to="/about">About</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/products">Products</Link>
+                        <Link to="/">Ingredients & Benefits</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/cart">Cart</Link>
+                        <button className="btn btn-primary">
+                            <Link to="/products">
+                                Products{' '}
+                                <FontAwesomeIcon
+                                    icon={faArrowRight}
+                                    className="icon"
+                                />
+                            </Link>
+                        </button>
                     </li>
                     <li className="nav-item">
-                        <Link to="/login">Login</Link>
+                        <Link to="/cart">
+                            <FontAwesomeIcon icon={faCartShopping} size="lg" />
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/login">
+                            <FontAwesomeIcon icon={faCircleUser} size="xl" />
+                        </Link>
                     </li>
                 </ul>
             </nav>

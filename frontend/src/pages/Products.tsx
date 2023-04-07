@@ -1,7 +1,5 @@
-// src/pages/Products.tsx
-import React from 'react';
 import useProductList from '../hooks/useProductList';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { BASE_URL } from '../utils/config';
 
 export const Products = () => {

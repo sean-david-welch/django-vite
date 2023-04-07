@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap');
 :root {
     --website-width: 100vw;
-    --primary-color: #5445ff;
+    --primary-color: #b0b0b0;
     --light-color: #f4f4f4;
+    --grey-color: #b4b3b3;
     --medium-color: #636363;
     --dark-color: #2f2f2f;
     --black-color: #000;
     --gradient-dark: linear-gradient(#1f1e1e 60%, #0f0f0f);
-    --gradient-light: linear-gradient(#f6f6f6 30%, #b4b3b3);
+    --gradient-light: linear-gradient(to bottom right, #b8b7b7 20%, #6b6a6a);
 }
 
 /* General Utilities */
@@ -41,7 +42,7 @@ body {
     font-family: 'Dosis', sans-serif;
     line-height: 1.75;
     overflow-x: hidden;
-    background-color: var(--medium-color);
+    background: var(--gradient-light);
 }
 
 a {
@@ -67,7 +68,7 @@ p {
 }
 
 .btn {
-    padding: 0.5rem 2.5rem;
+    padding: 0.25rem 2.5rem;
     border: none;
     border-radius: 1.25rem;
     cursor: pointer;
@@ -79,6 +80,10 @@ p {
 .btn-nav {
     display: flex;
     justify-content: center;
+    padding: 0.5rem 2.5rem;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 300;
 }
 
 .btn-hero {
