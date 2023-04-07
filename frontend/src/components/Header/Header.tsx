@@ -7,25 +7,11 @@ import {
     faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 
-import logo from '/logo.png';
+import logo from '../../assets/logo.png';
+import useTransparentHeader from '../../hooks/useTransparentHeader';
 
 function Header() {
-    const location = useLocation();
-    const isHomePage = location.pathname === '/';
-    const [isTransparent, setIsTransparent] = useState(isHomePage);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (isHomePage) {
-                const heroImageHeight = 600;
-                const showTransparent = window.scrollY < heroImageHeight;
-                setIsTransparent(showTransparent);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [isHomePage]);
+    const isTransparent = useTransparentHeader();
 
     return (
         <header>
