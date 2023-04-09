@@ -1,9 +1,12 @@
-@import 'index.css';
-@import 'header.css';
-@import 'footer.css';
-@import 'products.css';
-@import 'hero.css';
-@import 'sideNavbar.css';
+@import 'Index.css';
+
+@import './navigation/header.css';
+@import './navigation/footer.css';
+@import './navigation/sideNavbar.css';
+
+@import './products/products.css';
+
+@import './home/hero.css';
 
 .App {
     max-width: 100vw;

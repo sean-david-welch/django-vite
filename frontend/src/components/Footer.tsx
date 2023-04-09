@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 
-import NavItem from './NavItem';
-import NavButton from './NavButton';
+import NavItem from './navigation/NavItem';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
