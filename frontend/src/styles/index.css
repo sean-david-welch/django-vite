@@ -1,5 +1,6 @@
 /* Variables */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600&display=swap');
+
 :root {
     --website-width: 100vw;
     --gold-color: #b59410;
@@ -18,8 +19,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
     color: var(--light-color);
+    font-family: 'Oswald', sans-serif;
 }
 
 html {
@@ -76,10 +77,6 @@ p {
     text-decoration: none;
     transition: all 0.5s ease-in-out;
     font-size: 1rem;
-}
-
-.btn:hover {
-    transform: scale(1.025);
 }
 
 .btn-nav {
@@ -162,7 +159,6 @@ svg:not(.fa-arrow-right):not(.socials svg) {
 
 svg:not(.fa-arrow-right):not(.socials svg):hover {
     transform: rotateY(180deg);
-    fill: var(--gold-color);
 }
 
 .socials svg {
@@ -171,5 +167,4 @@ svg:not(.fa-arrow-right):not(.socials svg):hover {
 
 .socials svg:hover {
     transform: scale(1.05);
-    fill: var(--gold-color);
 }

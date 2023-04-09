@@ -17,7 +17,7 @@ export const Hero = () => {
             </p>
             <button className="btn btn-primary btn-nav btn-hero">
                 <Link to="/products">
-                    Shop Primal Formulas
+                    {'Shop Primal Formulas'}
                     <FontAwesomeIcon icon={faArrowRight} className="icon" />
                 </Link>
             </button>

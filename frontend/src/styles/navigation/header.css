@@ -59,3 +59,11 @@ header #logo:hover {
     font-size: 1.1rem;
     font-weight: 300;
 }
+
+.nav-item path {
+    transition: all 600ms ease-in-out;
+}
+
+.nav-item:hover path {
+    fill: var(--gold-color);
+}

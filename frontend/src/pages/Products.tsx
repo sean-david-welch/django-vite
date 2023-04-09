@@ -22,14 +22,20 @@ export const Products = () => {
                                         alt={product.name}
                                     />
                                     <h2>Price: €{product.price}</h2>
-                                    <button className="btn btn-nav btn-primary">
-                                        {'View product '}
-                                        <FontAwesomeIcon icon={faArrowRight} />
-                                    </button>
-                                    <button className="btn btn-nav btn-primary">
-                                        {'Add to cart '}
-                                        <FontAwesomeIcon icon={faCartPlus} />
-                                    </button>
+                                    <div className="product-nav">
+                                        <button className="btn btn-nav btn-primary">
+                                            {'View product '}
+                                            <FontAwesomeIcon
+                                                icon={faArrowRight}
+                                            />
+                                        </button>
+                                        <button className="btn btn-nav btn-primary">
+                                            {'Add to cart '}
+                                            <FontAwesomeIcon
+                                                icon={faCartPlus}
+                                            />
+                                        </button>
+                                    </div>
                                 </div>
                             </li>
                         ))}
