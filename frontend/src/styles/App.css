@@ -3,6 +3,7 @@
 @import './navigation/header.css';
 @import './navigation/footer.css';
 @import './navigation/sideNavbar.css';
+@import './navigation/toTop.css';
 
 @import './products/products.css';
 

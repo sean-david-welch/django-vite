@@ -52,6 +52,18 @@
     background-color: var(--medium-color);
 }
 
+.benefits-list-item:nth-child(2) {
+    transition-delay: 200ms;
+}
+
+.benefits-list-item:nth-child(3) {
+    transition-delay: 400ms;
+}
+
+.benefits-list-item:nth-child(4) {
+    transition-delay: 600ms;
+}
+
 .benefits-list-item:hover {
     transform: scale(1.05);
     background-color: var(--dark-color);

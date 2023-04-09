@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 import NavItem from './navigation/NavItem';
+import ToTopButton from './navigation/ToTop';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -49,6 +50,7 @@ function Footer() {
                     <FontAwesomeIcon icon={faYoutube} size="2xl" />
                 </Link>
             </div>
+            <ToTopButton />
         </footer>
     );
 }

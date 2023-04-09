@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
-import BenefitsHome from '../components/BenefitsHome';
+import BenefitsHome from '../components/home/BenefitsHome';
 
 export const Home = () => {
     return (
