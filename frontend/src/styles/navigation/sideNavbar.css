@@ -6,6 +6,7 @@
     background-color: var(--dark-color);
     transition: all 700ms;
     pointer-events: none;
+    border-right: 3px solid var(--medium-color);
 }
 
 .side-nav.open {
@@ -37,10 +38,12 @@
     margin: 3rem 0;
     position: relative;
 }
+.side-nav__menu .nav-item,
 .side-nav__menu .nav-item a {
-    transition: all 500ms;
+    transition: all 500ms ease-in-out;
 }
 
+.side-nav__menu .nav-item:hover,
 .side-nav__menu .nav-item a:hover {
     color: var(--gold-color);
 }
@@ -53,7 +56,7 @@
     left: -1rem;
     width: 400%;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--light-color);
     transition: all 500ms;
 }
 
@@ -64,7 +67,7 @@
 }
 
 .icon-nav .nav-item {
-    margin: 0 2rem;
+    margin: 0 3rem;
 }
 
 .icon-nav .nav-item::after {
@@ -75,7 +78,7 @@
     z-index: 10000;
     font-size: 2rem;
     position: fixed;
-    top: 1rem;
+    top: 1.75rem;
     left: 3rem;
     pointer-events: auto;
 }
@@ -84,8 +87,9 @@
     position: fixed;
     font-size: 1.5rem;
     font-weight: 400;
-    top: 1.25rem;
-    left: 7rem;
+    top: 1.85rem;
+    left: 6.5rem;
+    transition: all 500ms ease-in-out;
 }
 
 .side-nav__icon p:hover {

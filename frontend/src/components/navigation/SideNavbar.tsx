@@ -43,7 +43,7 @@ function SideNavbar() {
             </div>
             {!isOpen && (
                 <div className="side-nav__icon" onClick={toggleSideNavbar}>
-                    <FontAwesomeIcon icon={faBars} />
+                    <FontAwesomeIcon icon={faBars} className="fadeInOut" />
                 </div>
             )}
         </>

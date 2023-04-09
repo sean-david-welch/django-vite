@@ -9,7 +9,7 @@ interface NavButtonProps extends LinkProps {
 function NavButton({ to, children, icon }: NavButtonProps) {
     return (
         <li className="nav-item">
-            <button className="btn btn-primary">
+            <button className="btn btn-nav btn-primary">
                 <Link to={to}>
                     {children} {icon}
                 </Link>

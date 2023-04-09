@@ -4,7 +4,13 @@ header {
 
 header #logo {
     display: flex;
-    max-width: 5rem;
+    margin: 0 10rem;
+    max-width: 7.5rem;
+    transition: all 600ms ease-in-out;
+}
+
+header #logo:hover {
+    transform: scale(1.025);
 }
 
 #navbar {
@@ -15,7 +21,11 @@ header #logo {
     top: 0;
     padding: 0.25rem;
     width: 100vw;
-    transition: background 300ms;
+    transition: all 600ms ease-in-out;
+}
+
+#navbar:hover {
+    border-bottom: 0.15rem solid var(--gold-color);
 }
 
 #navbar.transparent {
@@ -23,7 +33,7 @@ header #logo {
     position: fixed;
     top: 0;
     width: 100%;
-    transition: background 300ms;
+    transition: all 600ms ease-in-out;
     border-bottom: none;
 }
 
@@ -31,8 +41,18 @@ header #logo {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 100%;
+}
+
+#navbar .nav-list-side {
+    display: flex;
+    margin: 0 5rem;
+    align-items: center;
+}
+
+#navbar .nav-list-side > * {
+    margin: 0 1rem;
 }
 
 #navbar .nav-item a {

@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap');
 :root {
     --website-width: 100vw;
-    --gold-color: #e0be00;
+    --gold-color: #b59410;
     --primary-color: #b0b0b0;
     --light-color: #f4f4f4;
     --grey-color: #b4b3b3;
     --medium-color: #636363;
     --dark-color: #2f2f2f;
     --black-color: #000;
-    --gradient-dark: linear-gradient(#1f1e1e 60%, #0f0f0f);
-    --gradient-light: linear-gradient(to bottom right, #b8b7b7 20%, #6b6a6a);
+    --gradient-dark: linear-gradient(to bottom right, #212121 20%, #6b6a6a);
+    --gradient-light: linear-gradient(to bottom right, #7e7e7e 40%, #474747);
 }
 
 /* General Utilities */
@@ -74,8 +74,12 @@ p {
     border-radius: 1.25rem;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.5s linear;
+    transition: all 0.5s ease-in-out;
     font-size: 1rem;
+}
+
+.btn:hover {
+    transform: scale(1.025);
 }
 
 .btn-nav {
@@ -96,6 +100,12 @@ p {
     color: var(--light-color);
     background-color: var(--dark-color);
     font-weight: 500;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-color);
+    color: var(--dark-color);
 }
 
 /* Miscellaeneous */
@@ -145,14 +155,21 @@ a.youtube:hover {
     color: #ff0000;
 }
 
-/* icons */
-svg.fa-cart-shopping,
-svg.fa-circle-user {
+/* Icons */
+svg:not(.fa-arrow-right):not(.socials svg) {
     transition: all 600ms ease-in-out;
 }
 
-svg.fa-cart-shopping:hover,
-svg.fa-circle-user:hover {
+svg:not(.fa-arrow-right):not(.socials svg):hover {
     transform: rotateY(180deg);
-    color: var(--gold-color);
+    fill: var(--gold-color);
+}
+
+.socials svg {
+    transition: all 600ms ease-in-out;
+}
+
+.socials svg:hover {
+    transform: scale(1.05);
+    fill: var(--gold-color);
 }

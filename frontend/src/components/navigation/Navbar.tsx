@@ -22,20 +22,25 @@ function Navbar() {
                 <Link to="/">
                     <img src={logo} id="logo" alt="Logo" />
                 </Link>
-                <NavButton
-                    to="/products"
-                    icon={
-                        <FontAwesomeIcon icon={faArrowRight} className="icon" />
-                    }
-                >
-                    Products
-                </NavButton>
-                <NavItem to="/cart">
-                    <FontAwesomeIcon icon={faCartShopping} size="lg" />
-                </NavItem>
-                <NavItem to="/login">
-                    <FontAwesomeIcon icon={faCircleUser} size="xl" />
-                </NavItem>
+                <div className="nav-list-side">
+                    <NavButton
+                        to="/products"
+                        icon={
+                            <FontAwesomeIcon
+                                icon={faArrowRight}
+                                className="icon"
+                            />
+                        }
+                    >
+                        Products
+                    </NavButton>
+                    <NavItem to="/cart">
+                        <FontAwesomeIcon icon={faCartShopping} size="xl" />
+                    </NavItem>
+                    <NavItem to="/login">
+                        <FontAwesomeIcon icon={faCircleUser} size="2xl" />
+                    </NavItem>
+                </div>
             </ul>
         </nav>
     );

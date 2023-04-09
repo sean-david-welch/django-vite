@@ -5,16 +5,36 @@ footer {
     padding: 1rem;
     background-color: var(--dark-color);
     border-top: 0.15rem solid var(--black-color);
+    transition: all 600ms ease-in-out;
+}
+
+footer:hover {
+    border-top: 0.15rem solid var(--gold-color);
 }
 
 footer #logo {
     max-width: 10rem;
+    transition: all 600ms ease-in-out;
+}
+
+footer #logo:hover {
+    transform: scale(1.025);
 }
 
 footer .nav-list {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+footer .nav-list a {
+    transition: all 600ms ease-in-out;
+}
+
+footer .nav-list a:hover {
+    color: var(--gold-color);
 }
 
 footer .socials {

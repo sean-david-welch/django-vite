@@ -9,7 +9,7 @@ function useTransparentHeader() {
     useEffect(() => {
         const handleScroll = () => {
             if (isHomePage) {
-                const heroImageHeight = 300;
+                const heroImageHeight = 250;
                 const showTransparent = window.scrollY < heroImageHeight;
                 setIsTransparent(showTransparent);
             }
