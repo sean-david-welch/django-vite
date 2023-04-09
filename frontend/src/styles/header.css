@@ -8,7 +8,7 @@ header #logo {
 }
 
 #navbar {
-    z-index: 10;
+    z-index: 1000;
     background-color: var(--dark-color);
     border-bottom: 0.15rem solid var(--black-color);
     position: fixed;

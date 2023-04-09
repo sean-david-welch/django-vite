@@ -1,5 +1,5 @@
 .side-nav {
-    z-index: 100;
+    z-index: 10000;
     position: fixed;
     width: 22.5rem;
     height: 100vh;
@@ -42,7 +42,7 @@
 }
 
 .side-nav__menu .nav-item a:hover {
-    color: #e0be00;
+    color: var(--gold-color);
 }
 
 .side-nav__menu .nav-item::after {
@@ -51,9 +51,10 @@
     position: absolute;
     bottom: -10px;
     left: -1rem;
-    width: 300%;
+    width: 400%;
     height: 2px;
     background-color: #fff;
+    transition: all 500ms;
 }
 
 .icon-nav {
@@ -71,7 +72,7 @@
 }
 
 .side-nav__icon {
-    z-index: 100;
+    z-index: 10000;
     font-size: 2rem;
     position: fixed;
     top: 1rem;
@@ -87,13 +88,17 @@
     left: 7rem;
 }
 
+.side-nav__icon p:hover {
+    color: var(--gold-color);
+}
+
 .side-nav__icon p::after {
     content: '';
     display: block;
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 150%;
-    height: 1px;
+    height: 2px;
     background-color: #fff;
 }

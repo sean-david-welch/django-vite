@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;600&display=swap');
 :root {
     --website-width: 100vw;
+    --gold-color: #e0be00;
     --primary-color: #b0b0b0;
     --light-color: #f4f4f4;
     --grey-color: #b4b3b3;
@@ -88,7 +89,7 @@ p {
     top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10;
+    z-index: 100;
 }
 
 .btn-primary {
@@ -142,4 +143,16 @@ button.website {
 
 a.youtube:hover {
     color: #ff0000;
+}
+
+/* icons */
+svg.fa-cart-shopping,
+svg.fa-circle-user {
+    transition: all 600ms ease-in-out;
+}
+
+svg.fa-cart-shopping:hover,
+svg.fa-circle-user:hover {
+    transform: rotateY(180deg);
+    color: var(--gold-color);
 }

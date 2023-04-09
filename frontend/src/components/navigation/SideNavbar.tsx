@@ -5,12 +5,10 @@ import {
     faX,
     faCartShopping,
     faCircleUser,
-    faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import useSideNavbar from '../../hooks/useSideNavbar';
 
 import NavItem from './NavItem';
-import NavButton from './NavButton';
 
 function SideNavbar() {
     const { isOpen, toggleSideNavbar } = useSideNavbar();
@@ -37,7 +35,9 @@ function SideNavbar() {
                 {isOpen && (
                     <div className="side-nav__icon" onClick={toggleSideNavbar}>
                         <FontAwesomeIcon icon={faX} />
-                        <p>Primal Formulas</p>
+                        <Link to="/">
+                            <p>Primal Formulas</p>
+                        </Link>
                     </div>
                 )}
             </div>
