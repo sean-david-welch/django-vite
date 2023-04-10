@@ -3,11 +3,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from . import views
+from . views import RouteList
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('admin/', admin.site.urls),
+    path('', RouteList.as_view(), name='home'),
+    path('admin/', admin.site.urls, name='admin'),
     path('api/products/', include('products.urls')),
 ]
 
