@@ -3,6 +3,10 @@ from rest_framework.views import APIView
 
 from django.urls import reverse, get_resolver, URLPattern, URLResolver
 
+from django.shortcuts import render
+from django.urls import URLPattern, URLResolver, reverse, get_resolver
+from rest_framework.views import APIView
+
 class RouteList(APIView):
     def list_routes(self, urlpatterns):
         routes = []
@@ -26,4 +30,4 @@ class RouteList(APIView):
         urlpatterns = get_resolver().url_patterns
         api_routes = self.list_routes(urlpatterns)
 
-        return Response(api_routes)
+        return render(request, 'home.html', {'routes': api_routes})

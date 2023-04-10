@@ -1,0 +1,109 @@
+/* Variables */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600&display=swap');
+
+:root {
+    --website-width: 100vw;
+    --gold-color: #b59410;
+    --primary-color: #b0b0b0;
+    --light-color: #f4f4f4;
+    --grey-color: #b4b3b3;
+    --medium-color: #636363;
+    --dark-color: #2f2f2f;
+    --black-color: #000;
+    --gradient-dark: linear-gradient(to bottom right, #212121 20%, #6b6a6a);
+    --gradient-light: linear-gradient(to bottom right, #7e7e7e 40%, #474747);
+}
+
+/* General Utilities */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--light-color);
+    font-family: 'Oswald', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--black-color);
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--dark-color);
+}
+
+body {
+    font-family: 'Dosis', sans-serif;
+    line-height: 1.75;
+    overflow-x: hidden;
+    background-color: var(--dark-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-color);
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: 1rem auto;
+    text-align: center;
+    padding: 0 5rem;
+}
+
+/* API Route List Page */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin: 1rem auto;
+    text-align: center;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--gold-color);
+    padding-bottom: 0.5rem;
+}
+
+img {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 1rem auto;
+    max-width: 15rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem auto;
+}
+
+li {
+    background-color: var(--medium-color);
+    padding: 0.15rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+li a {
+    font-size: 1.1rem;
+    font-weight: 300;
+    transition: color 0.3s ease-in-out;
+}
+
+li a:hover {
+    color: var(--gold-color);
+}

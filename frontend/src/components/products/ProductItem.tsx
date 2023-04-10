@@ -2,7 +2,8 @@ import React, { useRef } from 'react';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
 import { Product } from '../../types/Product';
-import { BASE_URL } from '../../utils/config';
+
+import NavButton from '../navigation/NavButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
@@ -18,18 +19,22 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
         <li key={product.id}>
             <div ref={productCardRef} className="product-card hidden">
                 <h2>{product.name}</h2>
-                <img src={`${BASE_URL}/${product.image}`} alt={product.name} />
+                <img src={product.image} alt={product.name} />
                 <h2>Price: €{product.price}</h2>
 
                 <div className="product-nav">
-                    <button className="btn btn-nav btn-primary">
-                        {'View product '}
-                        <FontAwesomeIcon icon={faArrowRight} />
-                    </button>
-                    <button className="btn btn-nav btn-primary">
-                        {'Add to cart '}
-                        <FontAwesomeIcon icon={faCartPlus} />
-                    </button>
+                    <NavButton
+                        to="/shop"
+                        icon={<FontAwesomeIcon icon={faArrowRight} />}
+                    >
+                        View Product
+                    </NavButton>
+                    <NavButton
+                        to="/cart"
+                        icon={<FontAwesomeIcon icon={faCartPlus} />}
+                    >
+                        Add to Cart
+                    </NavButton>
                 </div>
             </div>
         </li>
