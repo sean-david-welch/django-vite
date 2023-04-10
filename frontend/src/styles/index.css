@@ -71,6 +71,10 @@ p {
     display: inline-block;
 }
 
+.marginless {
+    margin-bottom: -5rem;
+}
+
 .section-heading::after {
     content: '';
     display: block;

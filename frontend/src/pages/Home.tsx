@@ -10,6 +10,7 @@ export const Home = () => {
                 <section id="home">
                     <Hero />
                     <BenefitsHome />
+                    <div className="marginless"></div>
                     <Products />
                 </section>
             </Layout>
