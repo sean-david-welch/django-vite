@@ -19,7 +19,7 @@ function SideNavbar() {
                 <nav className="side-nav__menu">
                     <ul>
                         <NavItem to="/about">About</NavItem>
-                        <NavItem to="/products">Products</NavItem>
+                        <NavItem to="/shop">Products</NavItem>
                         <NavItem to="/cart">Cart</NavItem>
                         <NavItem to="/login">Login</NavItem>
                     </ul>

@@ -1,6 +1,7 @@
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import BenefitsHome from '../components/home/BenefitsHome';
+import Products from '../components/Products';
 
 export const Home = () => {
     return (
@@ -9,6 +10,7 @@ export const Home = () => {
                 <section id="home">
                     <Hero />
                     <BenefitsHome />
+                    <Products />
                 </section>
             </Layout>
         </div>

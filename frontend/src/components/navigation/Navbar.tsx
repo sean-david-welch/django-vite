@@ -24,7 +24,7 @@ function Navbar() {
                 </Link>
                 <div className="nav-list-side">
                     <NavButton
-                        to="/products"
+                        to="/shop"
                         icon={
                             <FontAwesomeIcon
                                 icon={faArrowRight}

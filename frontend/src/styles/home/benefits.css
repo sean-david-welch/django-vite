@@ -1,6 +1,8 @@
 .benefits-home {
-    margin: 4rem;
+    margin: 4rem 4rem 0 4rem;
+    padding: 2rem 0 4rem 0;
     border-top: 0.15rem solid var(--black-color);
+    border-bottom: 0.15rem solid var(--black-color);
 }
 
 .benefits-home-title {
