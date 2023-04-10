@@ -25,16 +25,37 @@ footer .nav-list {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 1.35rem;
+    font-weight: 200;
 }
 
 footer .nav-list a {
+    position: relative;
     transition: all 600ms ease-in-out;
 }
 
 footer .nav-list a:hover {
     color: var(--gold-color);
+}
+
+footer .nav-list a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 125%;
+    height: 0.1rem;
+    background-color: var(--gold-color);
+    opacity: 0;
+    margin-top: 0.25rem;
+    transition: all 600ms ease-in-out;
+}
+
+footer .nav-list a:hover::after {
+    opacity: 1;
+    height: 0.1rem;
 }
 
 footer .socials {

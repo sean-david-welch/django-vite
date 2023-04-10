@@ -65,14 +65,12 @@ p {
 /* Scroll animation */
 .hidden {
     opacity: 0;
-    filter: blur(5px);
     transform: translateX(-100%);
-    transition: all 2s;
+    transition: transform 2s;
 }
 
 .show {
     opacity: 1;
-    filter: blur(0);
     transform: translateX(0);
 }
 
@@ -117,6 +115,18 @@ p {
 .btn-primary:hover {
     background-color: var(--gold-color);
     color: var(--dark-color);
+}
+
+.btn-primary a,
+.btn-primary svg path {
+    color: var(--light-color);
+    transition: all 600ms ease-in-out;
+}
+
+.btn-primary:hover a,
+.btn-primary:hover svg path {
+    color: var(--dark-color);
+    fill: var(--dark-color);
 }
 
 /* Miscellaeneous */
@@ -171,7 +181,7 @@ svg:not(.fa-arrow-right):not(.socials svg) {
     transition: all 600ms ease-in-out;
 }
 
-svg:not(.fa-arrow-right):not(.socials svg):hover {
+svg:not(.fa-arrow-right):not(.socials svg):not(.btn-primary svg):hover {
     transform: rotateY(180deg);
 }
 
@@ -181,4 +191,12 @@ svg:not(.fa-arrow-right):not(.socials svg):hover {
 
 .socials svg:hover {
     transform: scale(1.05);
+}
+
+.socials svg path {
+    transition: all 600ms ease-in-out;
+}
+
+.socials svg:hover path {
+    fill: var(--gold-color);
 }

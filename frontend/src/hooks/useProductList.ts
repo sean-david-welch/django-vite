@@ -2,13 +2,7 @@
 import { useEffect, useState } from 'react';
 import fetchData from '../utils/fetchData';
 
-interface Product {
-    id: string;
-    name: string;
-    price: number;
-    description: string;
-    image: string;
-}
+import { Product } from '../types/Product';
 
 function useProductList() {
     const [products, setProducts] = useState<Product[]>([]);
