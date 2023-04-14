@@ -1,6 +1,7 @@
 import { LinkProps } from 'react-router-dom';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
+// Product Types
 export interface Product {
     id: string;
     name: string;
@@ -9,13 +10,20 @@ export interface Product {
     image: string;
 }
 
+// Layout Types
 export interface LayoutProps {
     children: React.ReactNode;
 }
 
-export interface NavButtonProps extends LinkProps {
+export interface NavItemProps extends LinkProps {
+    children: React.ReactNode;
+}
+
+export interface NavButtonProps {
+    to: string;
     children: React.ReactNode;
     icon: React.ReactNode;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export interface UseSideNavbar {
@@ -23,12 +31,29 @@ export interface UseSideNavbar {
     toggleSideNavbar: () => void;
 }
 
-export interface NavItemProps extends LinkProps {
-    children: React.ReactNode;
-}
-
+// Home Types
 export interface BenefitItemProps {
     icon: IconDefinition;
     title: string;
     description: string;
+}
+
+// Cart Types
+export interface CartItem {
+    id: string;
+    name: string;
+    price: number;
+    image: string;
+    quantity: number;
+}
+
+export interface CartContextData {
+    cart: CartItem[];
+    addToCart: (item: CartItem) => void;
+    removeFromCart: (id: string) => void;
+    updateQuantity: (id: string, quantity: number) => void;
+}
+
+export interface CartProviderProps {
+    children: React.ReactNode;
 }

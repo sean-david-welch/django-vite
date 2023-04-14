@@ -7,9 +7,22 @@ import NavButton from '../navigation/NavButton';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import { Product } from '../../types/Types';
 
+import { useCart } from '../../contexts/CartContext';
+
 const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
     const productCardRef = useRef<HTMLDivElement>(null);
     useIntersectionObserver(productCardRef);
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: 1,
+        });
+    };
 
     return (
         <li key={product.id}>
@@ -28,6 +41,7 @@ const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
                     <NavButton
                         to="/cart"
                         icon={<FontAwesomeIcon icon={faCartPlus} />}
+                        onClick={handleAddToCart}
                     >
                         Add to Cart
                     </NavButton>

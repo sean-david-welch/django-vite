@@ -18,7 +18,7 @@ export const Hero = () => {
                 Reach your wellness potential with our comprehnsive formulas
             </p>
             <button className="btn btn-primary btn-nav btn-hero">
-                <Link to="/products">
+                <Link to="/shop">
                     {'Shop Primal Formulas'}
                     <FontAwesomeIcon icon={faArrowRight} className="icon" />
                 </Link>

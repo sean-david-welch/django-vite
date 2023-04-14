@@ -1,11 +1,24 @@
 import useProductDetail from '../../hooks/useProductDetail';
 import NavButton from '../navigation/NavButton';
+import { useCart } from '../../contexts/CartContext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
 
 const productDetail = () => {
     const { product, loading } = useProductDetail();
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        console.log('Adding to cart:', product);
+        addToCart({
+            id: product.id,
+            name: product.name,
+            price: product.price,
+            image: product.image,
+            quantity: 1,
+        });
+    };
 
     if (loading) {
         return <div>Loading...</div>;
@@ -25,6 +38,7 @@ const productDetail = () => {
                         <NavButton
                             to="/cart"
                             icon={<FontAwesomeIcon icon={faCartPlus} />}
+                            onClick={handleAddToCart}
                         >
                             Add to Cart - €{product.price}
                         </NavButton>

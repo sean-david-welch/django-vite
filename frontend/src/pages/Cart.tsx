@@ -1,11 +1,11 @@
-import React from 'react';
 import Layout from '../components/Layout';
+import CartView from '../components/CartView';
 
 export const Cart = () => {
     return (
         <Layout>
             <section id="cart">
-                <h1>Cart</h1>
+                <CartView />
             </section>
         </Layout>
     );
