@@ -1,10 +1,5 @@
-import React from 'react';
-import { Link, LinkProps } from 'react-router-dom';
-
-interface NavButtonProps extends LinkProps {
-    children: React.ReactNode;
-    icon: React.ReactNode;
-}
+import { Link } from 'react-router-dom';
+import { NavButtonProps } from '../../types/Types';
 
 function NavButton({ to, children, icon }: NavButtonProps) {
     return (

@@ -1,14 +1,8 @@
 // BenefitItem.tsx
 import React, { useRef } from 'react';
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
-
-interface BenefitItemProps {
-    icon: IconDefinition;
-    title: string;
-    description: string;
-}
+import { BenefitItemProps } from '../../types/Types';
 
 const BenefitItem: React.FC<BenefitItemProps> = ({
     icon,

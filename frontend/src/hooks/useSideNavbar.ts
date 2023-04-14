@@ -1,9 +1,5 @@
 import { useState } from 'react';
-
-interface UseSideNavbar {
-    isOpen: boolean;
-    toggleSideNavbar: () => void;
-}
+import { UseSideNavbar } from '../types/Types';
 
 const useSideNavbar = (): UseSideNavbar => {
     const [isOpen, setIsOpen] = useState<boolean>(false);

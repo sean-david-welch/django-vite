@@ -1,17 +1,13 @@
 import React, { useRef } from 'react';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 
-import { Product } from '../../types/Product';
-
-import NavButton from '../navigation/NavButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-type ProductItemProps = {
-    product: Product;
-};
+import NavButton from '../navigation/NavButton';
+import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import { Product } from '../../types/Types';
 
-const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
+const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
     const productCardRef = useRef<HTMLDivElement>(null);
     useIntersectionObserver(productCardRef);
 

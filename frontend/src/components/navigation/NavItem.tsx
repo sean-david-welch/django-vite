@@ -1,9 +1,5 @@
-import React from 'react';
-import { Link, LinkProps } from 'react-router-dom';
-
-interface NavItemProps extends LinkProps {
-    children: React.ReactNode;
-}
+import { Link } from 'react-router-dom';
+import { NavItemProps } from '../../types/Types';
 
 function NavItem({ to, children }: NavItemProps) {
     return (

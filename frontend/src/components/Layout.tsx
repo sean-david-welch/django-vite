@@ -4,9 +4,7 @@ import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
-interface LayoutProps {
-    children: React.ReactNode;
-}
+import { LayoutProps } from '../types/Types';
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
