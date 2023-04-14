@@ -7,7 +7,6 @@ const fetchData = async (endpoint: string) => {
                 Accept: 'application/json',
             },
         });
-        console.log('response', response);
 
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
@@ -19,7 +18,6 @@ const fetchData = async (endpoint: string) => {
         }
 
         const data = await response.json();
-        console.log('data', data);
 
         if (!response.ok) {
             throw new Error(data.message);

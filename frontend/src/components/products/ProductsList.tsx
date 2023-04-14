@@ -1,7 +1,7 @@
-import useProductList from '../hooks/useProductList';
-import ProductItem from './products/ProductItem';
+import useProductList from '../../hooks/useProductList';
+import ProductItem from './ProductItem';
 
-function Products() {
+function ProductsList() {
     const { products } = useProductList();
 
     return (
@@ -20,4 +20,4 @@ function Products() {
     );
 }
 
-export default Products;
+export default ProductsList;

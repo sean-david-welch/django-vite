@@ -1,10 +1,10 @@
 import Layout from '../components/Layout';
-import Products from '../components/Products';
+import ProductsList from '../components/products/ProductsList';
 
 export const Shop = () => {
     return (
         <Layout>
-            <Products />
+            <ProductsList />
         </Layout>
     );
 };

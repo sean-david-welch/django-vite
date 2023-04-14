@@ -11,7 +11,6 @@ class ProductList(APIView):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True, context={'request': request})
 
-        # Check if the client expects JSON data
         if 'application/json' in request.META.get('HTTP_ACCEPT', ''):
             return Response(serializer.data)
 
@@ -28,7 +27,6 @@ class ProductDetail(APIView):
         product = self.get_object(pk)
         serializer = ProductSerializer(product, context={'request': request})
 
-        # Check if the client expects JSON data
         if 'application/json' in request.META.get('HTTP_ACCEPT', ''):
             return Response(serializer.data)
 

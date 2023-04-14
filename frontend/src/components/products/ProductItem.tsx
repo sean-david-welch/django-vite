@@ -24,7 +24,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
 
                 <ul className="product-nav">
                     <NavButton
-                        to="/shop"
+                        to={`/${product.id}`}
                         icon={<FontAwesomeIcon icon={faArrowRight} />}
                     >
                         View Product

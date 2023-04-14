@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import BenefitsHome from '../components/home/BenefitsHome';
-import Products from '../components/Products';
+import ProductsList from '../components/products/ProductsList';
 
 export const Home = () => {
     return (
@@ -11,7 +11,7 @@ export const Home = () => {
                     <Hero />
                     <BenefitsHome />
                     <div className="marginless"></div>
-                    <Products />
+                    <ProductsList />
                 </section>
             </Layout>
         </div>
