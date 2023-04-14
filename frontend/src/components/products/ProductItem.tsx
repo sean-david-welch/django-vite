@@ -22,7 +22,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
                 <img src={product.image} alt={product.name} />
                 <h2>Price: €{product.price}</h2>
 
-                <div className="product-nav">
+                <ul className="product-nav">
                     <NavButton
                         to="/shop"
                         icon={<FontAwesomeIcon icon={faArrowRight} />}
@@ -35,7 +35,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
                     >
                         Add to Cart
                     </NavButton>
-                </div>
+                </ul>
             </div>
         </li>
     );
