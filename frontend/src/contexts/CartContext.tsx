@@ -1,18 +1,19 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { CartItem, CartContextData, CartProviderProps } from '../types/Types';
 
-const CartContext = createContext<CartContextData>({} as CartContextData);
-
-export const useCart = () => {
-    return useContext(CartContext);
-};
+export const CartContext = createContext<CartContextData>(
+    {} as CartContextData
+);
 
 export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     const [cart, setCart] = useState<CartItem[]>([]);
 
+    const findItemById = (id: string) =>
+        cart.find(cartItem => cartItem.id === id);
+
     const addToCart = (item: CartItem) => {
         console.log('Adding item:', item);
-        const existingItem = cart.find(cartItem => cartItem.id === item.id);
+        const existingItem = findItemById(item.id);
 
         if (existingItem) {
             updateQuantity(item.id, existingItem.quantity + 1);
@@ -36,11 +37,9 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         );
     };
 
+    const value = { cart, addToCart, removeFromCart, updateQuantity };
+
     return (
-        <CartContext.Provider
-            value={{ cart, addToCart, removeFromCart, updateQuantity }}
-        >
-            {children}
-        </CartContext.Provider>
+        <CartContext.Provider value={value}>{children}</CartContext.Provider>
     );
 };

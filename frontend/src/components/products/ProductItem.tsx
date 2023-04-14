@@ -7,12 +7,12 @@ import NavButton from '../navigation/NavButton';
 import useIntersectionObserver from '../../hooks/useIntersectionObserver';
 import { Product } from '../../types/Types';
 
-import { useCart } from '../../contexts/CartContext';
+import { useCartContext } from '../../hooks/useCartContext';
 
 const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
     const productCardRef = useRef<HTMLDivElement>(null);
     useIntersectionObserver(productCardRef);
-    const { addToCart } = useCart();
+    const { addToCart } = useCartContext();
 
     const handleAddToCart = () => {
         addToCart({

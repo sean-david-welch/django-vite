@@ -47,6 +47,15 @@ export interface CartItem {
     quantity: number;
 }
 
+export interface CartItemProps {
+    item: CartItem;
+    handleChangeQuantity: (
+        id: string,
+        event: React.ChangeEvent<HTMLInputElement>
+    ) => void;
+    handleRemove: (id: string) => void;
+}
+
 export interface CartContextData {
     cart: CartItem[];
     addToCart: (item: CartItem) => void;

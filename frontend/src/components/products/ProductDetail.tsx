@@ -1,16 +1,15 @@
 import useProductDetail from '../../hooks/useProductDetail';
 import NavButton from '../navigation/NavButton';
-import { useCart } from '../../contexts/CartContext';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import { useCartContext } from '../../hooks/useCartContext';
 
 const productDetail = () => {
     const { product, loading } = useProductDetail();
-    const { addToCart } = useCart();
+    const { addToCart } = useCartContext();
 
     const handleAddToCart = () => {
-        console.log('Adding to cart:', product);
         addToCart({
             id: product.id,
             name: product.name,
