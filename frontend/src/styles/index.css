@@ -1,5 +1,5 @@
 /* Variables */
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap');
 
 :root {
     --website-width: 100vw;
@@ -41,7 +41,6 @@ html::-webkit-scrollbar-track {
 }
 
 body {
-    font-family: 'Dosis', sans-serif;
     line-height: 1.75;
     overflow-x: hidden;
     background: var(--gradient-light);
@@ -66,13 +65,13 @@ p {
     font-size: 2.5rem;
     font-weight: 300;
     text-align: center;
-    margin-top: 10rem;
     color: var(--black-color);
     display: inline-block;
+    margin-top: 10rem;
 }
 
-.marginless {
-    margin-bottom: -5rem;
+#home .section-heading {
+    margin-top: 5rem;
 }
 
 .section-heading::after {

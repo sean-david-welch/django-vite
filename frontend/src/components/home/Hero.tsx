@@ -1,10 +1,10 @@
-import hero1 from '../assets/hero1.mp4';
+import hero1 from '../../assets/hero1.mp4';
 
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-import NavButton from './navigation/NavButton';
+import NavButton from '../navigation/NavButton';
 
 export const Hero = () => {
     return (
