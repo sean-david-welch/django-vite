@@ -20,7 +20,7 @@ const productDetail = () => {
                 <img src={product.image} alt={product.name} />
 
                 <div className="product-info">
-                    <h2>Price: ${product.price}</h2>
+                    <h2>Price: €{product.price}</h2>
                     <ul className="product-nav">
                         <NavButton
                             to="/cart"
