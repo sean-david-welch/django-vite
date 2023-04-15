@@ -18,7 +18,7 @@ function Footer() {
             <div className="footer-navigation">
                 <ul className="nav-list">
                     <NavItem to="/about">About</NavItem>
-                    <NavItem to="/products">Products</NavItem>
+                    <NavItem to="/shop">Products</NavItem>
                     <NavItem to="/cart">Cart</NavItem>
                     <NavItem to="/login">Login</NavItem>
                 </ul>

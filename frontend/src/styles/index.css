@@ -75,6 +75,11 @@ p {
     margin-top: 5rem;
 }
 
+#cart .cart-description .section-heading {
+    margin: 0;
+    font-size: 2.25rem;
+}
+
 .section-heading::after {
     content: '';
     display: block;
@@ -149,6 +154,22 @@ p {
 .btn-primary:hover svg path {
     color: var(--dark-color);
     fill: var(--dark-color);
+}
+
+.btn-secondary {
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    font-weight: 500;
+    transition: all 0.5s ease-in-out;
+    border: none;
+    border-radius: 0.25rem;
+    margin: 0.25rem 0;
+    font-size: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: var(--gold-color);
+    color: var(--dark-color);
 }
 
 /* Miscellaeneous */

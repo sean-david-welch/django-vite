@@ -12,7 +12,6 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         cart.find(cartItem => cartItem.id === id);
 
     const addToCart = (item: CartItem) => {
-        console.log('Adding item:', item);
         const existingItem = findItemById(item.id);
 
         if (existingItem) {

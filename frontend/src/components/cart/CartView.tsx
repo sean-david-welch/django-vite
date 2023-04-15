@@ -2,11 +2,36 @@ import React from 'react';
 import { useCartContext } from '../../hooks/useCartContext';
 import CartItem from './CartItem';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+
+import NavButton from '../navigation/NavButton';
+
 const CartView: React.FC = () => {
     const { cart, removeFromCart, updateQuantity } = useCartContext();
 
     if (cart.length === 0) {
-        return <div>Your cart is empty.</div>;
+        return (
+            <div className="empty-cart">
+                <h2 className="section-heading">
+                    Your Shopping cart is empty{' '}
+                </h2>
+                <p>Click the link below to view some of our formulas</p>
+                <ul>
+                    <NavButton
+                        to="/shop"
+                        icon={
+                            <FontAwesomeIcon
+                                icon={faCartShopping}
+                                className="icon"
+                            />
+                        }
+                    >
+                        Products
+                    </NavButton>
+                </ul>
+            </div>
+        );
     }
 
     const handleRemove = (id: string) => {
@@ -29,9 +54,9 @@ const CartView: React.FC = () => {
     );
 
     return (
-        <div>
-            <h2>Your Cart</h2>
-            <ul>
+        <div className="cart-view">
+            <h2 className="section-heading">Your Cart</h2>
+            <ul className="cart-list-grid">
                 {cart.map(item => (
                     <CartItem
                         key={item.id}
@@ -41,7 +66,7 @@ const CartView: React.FC = () => {
                     />
                 ))}
             </ul>
-            <div>
+            <div className="cart-total">
                 <strong>Total: €{total.toFixed(2)}</strong>
             </div>
         </div>
