@@ -1,4 +1,4 @@
-def caclulate_cart_total(cart):
+def calculate_cart_total(cart):
     total_price = 0
     for item in cart:
         price_in_cents = int(item['price'] * 100)
