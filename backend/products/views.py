@@ -1,4 +1,4 @@
-from django.http import Http404
+from django.http import Http404, JsonResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -39,12 +39,15 @@ secret_key = os.environ.get('STRIPE_SECRET_TEST_KEY')
 
 stripe.api_key = secret_key
 
-class ProcessPayment(APIView):
+from rest_framework.response import Response
 
+class ProcessPayment(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
+        print("Data received:", data)  
         cart = data['cart']
-        total_amount = calculate_cart_total(cart)
+        total_amount = calculate_cart_total(cart['cart'])
+        print("Total amount:", total_amount)  
 
         try:
             payment_intent = stripe.PaymentIntent.create(
@@ -52,7 +55,11 @@ class ProcessPayment(APIView):
                 currency='eur',
                 automatic_payment_methods={'enabled': True},
             )
-            return Response({'client_secret': payment_intent.client_secret})
+            print("Payment intent created:", payment_intent)  
+            return JsonResponse({'client_secret': payment_intent.client_secret})
         except (Exception, stripe.error.CardError) as e:
-            return Response({'error': str(e) if isinstance(e, Exception) else e.user_message}, status=status.HTTP_400_BAD_REQUEST)
+            error_message = str(e) if isinstance(e, Exception) else e.user_message
+            print("Error:", error_message)  
+            return JsonResponse({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
+
 

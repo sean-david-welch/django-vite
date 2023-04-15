@@ -1,12 +1,23 @@
 import { BASE_URL } from './config';
 
-const fetchData = async (endpoint: string) => {
+// Add this interface before the fetchData function
+interface FetchDataOptions {
+    method?: string;
+    headers?: Record<string, string>;
+    body?: string;
+}
+
+const fetchData = async (endpoint: string, options?: FetchDataOptions) => {
     try {
-        const response = await fetch(`${BASE_URL}${endpoint}`, {
+        const requestOptions: RequestInit = {
             headers: {
                 Accept: 'application/json',
+                ...options?.headers,
             },
-        });
+            ...options,
+        };
+
+        const response = await fetch(`${BASE_URL}${endpoint}`, requestOptions);
 
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {

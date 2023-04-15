@@ -66,3 +66,15 @@ export interface CartContextData {
 export interface CartProviderProps {
     children: React.ReactNode;
 }
+
+// Fetch Data Types
+export type RequestHeaders = HeadersInit &
+    Partial<{
+        'Content-Type': string;
+    }>;
+
+export interface FetchOptions {
+    method?: string;
+    headers?: RequestHeaders;
+    body?: any;
+}

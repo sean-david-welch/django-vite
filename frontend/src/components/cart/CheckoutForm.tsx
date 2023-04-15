@@ -7,7 +7,11 @@ import {
 } from '@stripe/react-stripe-js';
 import { Stripe } from '@stripe/stripe-js';
 
-export default function CheckoutForm() {
+interface CheckoutFormProps {
+    clientSecret: string;
+}
+
+const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -105,4 +109,6 @@ export default function CheckoutForm() {
             {message && <div id="payment-message">{message}</div>}
         </form>
     );
-}
+};
+
+export default CheckoutForm;
