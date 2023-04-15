@@ -3,7 +3,7 @@ import { useCartContext } from '../../hooks/useCartContext';
 import CartItem from './CartItem';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import NavButton from '../navigation/NavButton';
 
@@ -19,15 +19,15 @@ const CartView: React.FC = () => {
                 <p>Click the link below to view some of our formulas</p>
                 <ul>
                     <NavButton
-                        to="/shop"
+                        to="/Shop"
                         icon={
                             <FontAwesomeIcon
-                                icon={faCartShopping}
+                                icon={faArrowRight}
                                 className="icon"
                             />
                         }
                     >
-                        Products
+                        Shop Primal Formulas
                     </NavButton>
                 </ul>
             </div>
@@ -56,18 +56,32 @@ const CartView: React.FC = () => {
     return (
         <div className="cart-view">
             <h2 className="section-heading">Your Cart</h2>
-            <ul className="cart-list-grid">
-                {cart.map(item => (
-                    <CartItem
-                        key={item.id}
-                        item={item}
-                        handleChangeQuantity={handleChangeQuantity}
-                        handleRemove={handleRemove}
-                    />
-                ))}
+            <ul>
+                <NavButton
+                    to="/Shop"
+                    icon={
+                        <FontAwesomeIcon icon={faArrowRight} className="icon" />
+                    }
+                >
+                    Continue Shopping
+                </NavButton>
             </ul>
-            <div className="cart-total">
-                <strong>Total: €{total.toFixed(2)}</strong>
+            <div className="cart">
+                <ul className="cart-list-grid">
+                    {cart.map(item => (
+                        <CartItem
+                            key={item.id}
+                            item={item}
+                            handleChangeQuantity={handleChangeQuantity}
+                            handleRemove={handleRemove}
+                        />
+                    ))}
+                </ul>
+                <div className="cart-total">
+                    <h1 className="section-heading">
+                        Sub-Total: €{total.toFixed(2)}
+                    </h1>
+                </div>
             </div>
         </div>
     );

@@ -10,7 +10,7 @@
 @import './home/hero.css';
 @import './home/benefits.css';
 
-@import './cart.css';
+@import './payments/cart.css';
 
 .App {
     max-width: 100vw;
