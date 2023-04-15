@@ -22,7 +22,7 @@ form {
 }
 
 /* Buttons and links */
-button {
+.stripe button {
     background: #5469d4;
     font-family: Arial, sans-serif;
     color: #ffffff;
@@ -38,7 +38,7 @@ button {
     width: 100%;
 }
 
-button:hover {
+.stripe button:hover {
     filter: contrast(115%);
 }
 

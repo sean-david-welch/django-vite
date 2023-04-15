@@ -55,7 +55,7 @@ const CartView: React.FC = () => {
 
     return (
         <div className="cart-view">
-            <h2 className="section-heading">Your Cart</h2>
+            <h2 className="section-heading">Your Shopping Cart:</h2>
             <ul>
                 <NavButton
                     to="/Shop"
