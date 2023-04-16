@@ -50,28 +50,12 @@ export const Cart = () => {
     return (
         <Layout>
             <section id="cart">
-                <h2 className="section-heading">Your Shopping Cart:</h2>
-                <ul>
-                    <NavButton
-                        to="/Shop"
-                        icon={
-                            <FontAwesomeIcon
-                                icon={faArrowRight}
-                                className="icon"
-                            />
-                        }
-                    >
-                        Continue Shopping
-                    </NavButton>
-                </ul>
-                <div className="cart-grid">
-                    <CartView />
-                    {clientSecret && (
-                        <Elements stripe={stripePromise}>
-                            <CheckoutForm clientSecret={clientSecret} />
-                        </Elements>
-                    )}
-                </div>
+                <CartView />
+                {clientSecret && (
+                    <Elements stripe={stripePromise} options={{ clientSecret }}>
+                        <CheckoutForm />
+                    </Elements>
+                )}
             </section>
         </Layout>
     );

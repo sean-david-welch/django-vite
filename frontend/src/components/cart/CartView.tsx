@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCartContext } from '../../hooks/useCartContext';
 import CartItem from './CartItem';
+import SectionHeading from '../navigation/SectionHeading';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -13,23 +14,14 @@ const CartView: React.FC = () => {
     if (cart.length === 0) {
         return (
             <div className="empty-cart">
-                <h2 className="section-heading">
-                    Your Shopping cart is empty{' '}
-                </h2>
-                <p>Click the link below to view some of our formulas</p>
-                <ul>
-                    <NavButton
-                        to="/Shop"
-                        icon={
-                            <FontAwesomeIcon
-                                icon={faArrowRight}
-                                className="icon"
-                            />
-                        }
-                    >
-                        Shop Primal Formulas
-                    </NavButton>
-                </ul>
+                <SectionHeading
+                    headingText="Your Shopping Cart Is Empty:"
+                    buttonLabel="Shop Primal Formulas"
+                    buttonUrl="/Shop"
+                    buttonIcon={
+                        <FontAwesomeIcon icon={faArrowRight} className="icon" />
+                    }
+                />
             </div>
         );
     }
@@ -55,6 +47,14 @@ const CartView: React.FC = () => {
 
     return (
         <div className="cart-view">
+            <SectionHeading
+                headingText="View Your Shopping Cart:"
+                buttonLabel="Continue Shopping"
+                buttonUrl="/Shop"
+                buttonIcon={
+                    <FontAwesomeIcon icon={faArrowRight} className="icon" />
+                }
+            />
             <div className="cart">
                 <ul className="cart-list-grid">
                     {cart.map(item => (

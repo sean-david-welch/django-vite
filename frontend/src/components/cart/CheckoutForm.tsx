@@ -7,11 +7,11 @@ import {
 } from '@stripe/react-stripe-js';
 import { PaymentIntent } from '@stripe/stripe-js';
 
-interface CheckoutFormProps {
-    clientSecret: string;
-}
+// interface CheckoutFormProps {
+//     clientSecret: string;
+// }
 
-const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
+const CheckoutForm = () => {
     const stripe = useStripe();
     const elements = useElements();
 
@@ -51,7 +51,7 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
                     break;
             }
         });
-    }, [stripe, clientSecret]);
+    }, [stripe]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
