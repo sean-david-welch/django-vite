@@ -68,13 +68,8 @@ export interface CartProviderProps {
 }
 
 // Fetch Data Types
-export type RequestHeaders = HeadersInit &
-    Partial<{
-        'Content-Type': string;
-    }>;
-
-export interface FetchOptions {
+export interface FetchDataOptions {
     method?: string;
-    headers?: RequestHeaders;
-    body?: any;
+    headers?: Record<string, string>;
+    body?: string;
 }

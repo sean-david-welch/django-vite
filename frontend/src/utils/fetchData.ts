@@ -1,11 +1,5 @@
 import { BASE_URL } from './config';
-
-// Add this interface before the fetchData function
-interface FetchDataOptions {
-    method?: string;
-    headers?: Record<string, string>;
-    body?: string;
-}
+import { FetchDataOptions } from '../types/Types';
 
 const fetchData = async (endpoint: string, options?: FetchDataOptions) => {
     try {

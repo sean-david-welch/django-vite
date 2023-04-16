@@ -44,11 +44,9 @@ from rest_framework.response import Response
 class ProcessPayment(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
-        print("Data received:", data)  
         cart = data['cart']
         total_amount = calculate_cart_total(cart['cart'])
-        print("Total amount:", total_amount)  
-
+        
         try:
             payment_intent = stripe.PaymentIntent.create(
                 amount=total_amount,
