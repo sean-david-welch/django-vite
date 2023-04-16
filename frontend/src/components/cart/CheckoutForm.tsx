@@ -5,7 +5,7 @@ import {
     useStripe,
     useElements,
 } from '@stripe/react-stripe-js';
-import { Stripe } from '@stripe/stripe-js';
+import { PaymentIntent } from '@stripe/stripe-js';
 
 interface CheckoutFormProps {
     clientSecret: string;
@@ -15,7 +15,6 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
     const stripe = useStripe();
     const elements = useElements();
 
-    const [email, setEmail] = useState('');
     const [message, setMessage] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -33,7 +32,7 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
         }
 
         stripe.retrievePaymentIntent(clientSecret).then(result => {
-            const paymentIntent = result.paymentIntent as Stripe.PaymentIntent;
+            const paymentIntent = result.paymentIntent as PaymentIntent;
 
             switch (paymentIntent.status) {
                 case 'succeeded':
@@ -52,7 +51,7 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
                     break;
             }
         });
-    }, [stripe]);
+    }, [stripe, clientSecret]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -70,7 +69,7 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
             },
         });
 
-        if (error.type === 'card_error' || error.type === 'validation_error') {
+        if (error.message) {
             setMessage(error.message);
         } else {
             setMessage('An unexpected error occurred.');
@@ -79,35 +78,26 @@ const CheckoutForm = ({ clientSecret }: CheckoutFormProps) => {
         setIsLoading(false);
     };
 
-    const paymentElementOptions = {
-        style: {
-            base: {
-                fontSize: '16px',
-            },
-        },
-    };
-
     return (
-        <form id="payment-form" onSubmit={handleSubmit}>
-            <LinkAuthenticationElement
-                id="link-authentication-element"
-                onChange={e => setEmail(e.value)}
-            />
-            <PaymentElement
-                id="payment-element"
-                options={paymentElementOptions}
-            />
-            <button disabled={isLoading || !stripe || !elements} id="submit">
-                <span id="button-text">
-                    {isLoading ? (
-                        <div className="spinner" id="spinner"></div>
-                    ) : (
-                        'Pay now'
-                    )}
-                </span>
-            </button>
-            {message && <div id="payment-message">{message}</div>}
-        </form>
+        <div className="stripe-form">
+            <form id="payment-form" className="stripe" onSubmit={handleSubmit}>
+                {/* <LinkAuthenticationElement id="link-authentication-element" /> */}
+                <PaymentElement id="payment-element" />
+                <button
+                    disabled={isLoading || !stripe || !elements}
+                    id="submit"
+                >
+                    <span id="button-text">
+                        {isLoading ? (
+                            <div className="spinner" id="spinner"></div>
+                        ) : (
+                            'Pay now'
+                        )}
+                    </span>
+                </button>
+                {message && <div id="payment-message">{message}</div>}
+            </form>
+        </div>
     );
 };
 

@@ -1,48 +1,56 @@
-form {
-    width: 30vw;
-    min-width: 500px;
-    align-self: center;
-    box-shadow: 0px 0px 0px 0.5px rgba(50, 50, 93, 0.1),
-        0px 2px 5px 0px rgba(50, 50, 93, 0.1),
-        0px 1px 1.5px 0px rgba(0, 0, 0, 0.07);
-    border-radius: 7px;
-    padding: 40px;
+#cart .stripe-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+#cart form {
+    display: grid;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--grey-color);
+    transition: all 600ms ease-in-out;
+}
+
+#cart form:hover {
+    border: 2px solid var(--gold-color);
+}
+
+#cart .stripe {
+    background-color: var(--dark-color);
+    color: var(--light-color);
 }
 
 #payment-message {
-    color: rgb(105, 115, 134);
-    font-size: 16px;
-    line-height: 20px;
-    padding-top: 12px;
+    color: var(--light-color);
+    font-size: 1rem;
     text-align: center;
 }
 
 #payment-element {
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
+    color: var(--light-color);
 }
 
 /* Buttons and links */
 .stripe button {
-    background: #5469d4;
-    font-family: Arial, sans-serif;
-    color: #ffffff;
-    border-radius: 4px;
-    border: 0;
-    padding: 12px 16px;
-    font-size: 16px;
-    font-weight: 600;
+    display: inline-block;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border-radius: 0.5rem;
+    border: 2px solid var(--grey-color);
     cursor: pointer;
-    display: block;
-    transition: all 0.2s ease;
-    box-shadow: 0px 4px 5.5px 0px rgba(0, 0, 0, 0.07);
-    width: 100%;
+    transition: all 500ms ease;
+    padding: 0.5rem 2rem;
 }
 
 .stripe button:hover {
-    filter: contrast(115%);
+    border: 2px solid var(--gold-color);
 }
 
-button:disabled {
+.stripe button:disabled {
     opacity: 0.5;
     cursor: default;
 }

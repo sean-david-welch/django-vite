@@ -55,17 +55,6 @@ const CartView: React.FC = () => {
 
     return (
         <div className="cart-view">
-            <h2 className="section-heading">Your Shopping Cart:</h2>
-            <ul>
-                <NavButton
-                    to="/Shop"
-                    icon={
-                        <FontAwesomeIcon icon={faArrowRight} className="icon" />
-                    }
-                >
-                    Continue Shopping
-                </NavButton>
-            </ul>
             <div className="cart">
                 <ul className="cart-list-grid">
                     {cart.map(item => (
