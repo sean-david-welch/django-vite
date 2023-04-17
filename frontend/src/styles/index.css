@@ -80,7 +80,9 @@ p {
 }
 
 #cart .cart-description .section-heading,
-#cart .cart-total .section-heading {
+#cart .cart-total .section-heading,
+#cart .stripe .section-heading,
+#cart .cart-list-grid .section-heading {
     margin: 0;
     font-size: 1.5rem;
 }

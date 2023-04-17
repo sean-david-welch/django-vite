@@ -44,8 +44,16 @@ from rest_framework.response import Response
 class ProcessPayment(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
-        cart = data['cart']
-        total_amount = calculate_cart_total(cart['cart'])
+        cart = data.get('cart', [])
+        total_amount = data.get('total', 0)
+
+        print("Cart data received in the backend:", cart)
+        print("Total amount received in the backend:", total_amount)
+        if not cart:
+            return Response({"detail": "Cart is empty"}, status=status.HTTP_400_BAD_REQUEST)
+
+        total_amount = calculate_cart_total(cart)
+
         
         try:
             payment_intent = stripe.PaymentIntent.create(

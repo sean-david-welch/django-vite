@@ -3,11 +3,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
+    margin: auto;
 }
 
 #cart form {
     display: grid;
+    margin: auto;
     padding: 2rem;
     border-radius: 0.5rem;
     border: 2px solid var(--grey-color);
@@ -18,9 +19,17 @@
     border: 2px solid var(--gold-color);
 }
 
+#cart form > * {
+    margin: 0.5rem 0;
+}
+
 #cart .stripe {
     background-color: var(--dark-color);
     color: var(--light-color);
+}
+
+#link-authentication-element input {
+    color: var(--black-color);
 }
 
 #payment-message {
@@ -30,7 +39,6 @@
 }
 
 #payment-element {
-    margin-bottom: 1rem;
     color: var(--light-color);
 }
 
@@ -47,12 +55,22 @@
 }
 
 .stripe button:hover {
-    border: 2px solid var(--gold-color);
+    background-color: var(--gold-color);
+    color: var(--dark-color);
 }
 
 .stripe button:disabled {
     opacity: 0.5;
     cursor: default;
+}
+
+.stripe button span {
+    font-size: 1.1rem;
+    transition: all 500ms ease;
+}
+
+.stripe button:hover span {
+    color: var(--dark-color);
 }
 
 /* spinner/processing state, errors */

@@ -7,27 +7,24 @@ import {
 } from '@stripe/react-stripe-js';
 import { PaymentIntent } from '@stripe/stripe-js';
 
-// interface CheckoutFormProps {
-//     clientSecret: string;
-// }
+interface CheckoutFormProps {
+    clientSecret: string | null;
+    totalAmount: number;
+}
 
-const CheckoutForm = () => {
+const CheckoutForm: React.FC<CheckoutFormProps> = ({
+    clientSecret,
+    totalAmount,
+}) => {
     const stripe = useStripe();
     const elements = useElements();
 
+    const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        if (!stripe) {
-            return;
-        }
-
-        const clientSecret = new URLSearchParams(window.location.search).get(
-            'payment_intent_client_secret'
-        );
-
-        if (!clientSecret) {
+        if (!stripe || !clientSecret) {
             return;
         }
 
@@ -51,7 +48,7 @@ const CheckoutForm = () => {
                     break;
             }
         });
-    }, [stripe]);
+    }, [stripe, clientSecret]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -66,6 +63,7 @@ const CheckoutForm = () => {
             elements,
             confirmParams: {
                 return_url: 'http://localhost:3000',
+                receipt_email: email,
             },
         });
 
@@ -81,7 +79,8 @@ const CheckoutForm = () => {
     return (
         <div className="stripe-form">
             <form id="payment-form" className="stripe" onSubmit={handleSubmit}>
-                {/* <LinkAuthenticationElement id="link-authentication-element" /> */}
+                <h2 className="section-heading">Stripe Checkout Form</h2>
+                <LinkAuthenticationElement id="link-authentication-element" />
                 <PaymentElement id="payment-element" />
                 <button
                     disabled={isLoading || !stripe || !elements}
@@ -91,7 +90,7 @@ const CheckoutForm = () => {
                         {isLoading ? (
                             <div className="spinner" id="spinner"></div>
                         ) : (
-                            'Pay now'
+                            `Pay now - €${totalAmount.toFixed(2)}`
                         )}
                     </span>
                 </button>
