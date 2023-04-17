@@ -8,7 +8,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import logo from '../../assets/logo.png';
-import useTransparentHeader from '../../hooks/useTransparentHeader';
+import useTransparentHeader from '../../hooks/navigation/useTransparentHeader';
 
 import NavItem from './NavItem';
 import NavButton from './NavButton';

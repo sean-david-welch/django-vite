@@ -1,8 +1,8 @@
 // src/utils/useProductList.tsx
 import { useEffect, useState } from 'react';
-import fetchData from '../utils/fetchData';
+import fetchData from '../../utils/fetchData';
 
-import { Product } from '../types/Types';
+import { Product } from '../../types/Types';
 
 function useProductList() {
     const [products, setProducts] = useState<Product[]>([]);

@@ -4,10 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import NavButton from '../navigation/NavButton';
-import useIntersectionObserver from '../../hooks/useIntersectionObserver';
+import useIntersectionObserver from '../../hooks/navigation/useIntersectionObserver';
 import { Product } from '../../types/Types';
 
-import { useCartContext } from '../../hooks/useCartContext';
+import { useCartContext } from '../../hooks/cart/useCartContext';
 
 const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
     const productCardRef = useRef<HTMLDivElement>(null);

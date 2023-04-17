@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CartItem from './CartItem';
-import { useCartContext } from '../../hooks/useCartContext';
-import { usePaymentIntent } from '../../hooks/usePaymentIntent';
+import { useCartContext } from '../../hooks/cart/useCartContext';
+import { usePaymentIntent } from '../../hooks/cart/usePaymentIntent';
 import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from './CheckoutForm';
 
@@ -10,9 +10,6 @@ interface CartViewProps {
 }
 
 const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
-    console.log('Parent component rendered');
-    console.log('MyComponent rendered');
-
     const { cart, removeFromCart, updateQuantity } = useCartContext();
 
     const [total, setTotal] = useState(0);
@@ -80,4 +77,4 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
     );
 };
 
-export default React.memo(CartView);
+export default CartView;

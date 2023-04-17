@@ -1,26 +1,15 @@
+// fetchData.ts
 import { BASE_URL } from './config';
 import { FetchDataOptions } from '../types/Types';
+import { buildRequestOptions } from './requestOptions';
+import { validateContentType } from './contentTypeValidator';
 
 const fetchData = async (endpoint: string, options?: FetchDataOptions) => {
     try {
-        const requestOptions: RequestInit = {
-            headers: {
-                Accept: 'application/json',
-                ...options?.headers,
-            },
-            ...options,
-        };
-
+        const requestOptions = buildRequestOptions(options);
         const response = await fetch(`${BASE_URL}${endpoint}`, requestOptions);
 
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-            throw new Error(
-                `Expected JSON data but received ${
-                    contentType || 'unknown content type'
-                } from ${endpoint}`
-            );
-        }
+        validateContentType(response.headers.get('content-type'), endpoint);
 
         const data = await response.json();
 

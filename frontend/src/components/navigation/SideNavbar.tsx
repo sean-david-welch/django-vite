@@ -6,7 +6,7 @@ import {
     faCartShopping,
     faCircleUser,
 } from '@fortawesome/free-solid-svg-icons';
-import useSideNavbar from '../../hooks/useSideNavbar';
+import useSideNavbar from '../../hooks/navigation/useSideNavbar';
 
 import NavItem from './NavItem';
 

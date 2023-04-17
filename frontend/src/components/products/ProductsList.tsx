@@ -1,4 +1,4 @@
-import useProductList from '../../hooks/useProductList';
+import useProductList from '../../hooks/productHooks/useProductList';
 import ProductItem from './ProductItem';
 
 function ProductsList() {

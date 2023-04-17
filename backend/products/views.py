@@ -1,4 +1,5 @@
 from django.http import Http404, JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
@@ -36,36 +37,58 @@ class ProductDetail(APIView):
 #####################################
 public_key = os.environ.get('STRIPE_PUBLIC_TEST_KEY')
 secret_key = os.environ.get('STRIPE_SECRET_TEST_KEY')
-
 stripe.api_key = secret_key
-
-from rest_framework.response import Response
 
 class ProcessPayment(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
         cart = data.get('cart', [])
-        total_amount = data.get('total', 0)
 
-        print("Cart data received in the backend:", cart)
-        print("Total amount received in the backend:", total_amount)
         if not cart:
             return Response({"detail": "Cart is empty"}, status=status.HTTP_400_BAD_REQUEST)
 
-        total_amount = calculate_cart_total(cart)
-
-        
+        calculated_total_amount = calculate_cart_total(cart)
         try:
             payment_intent = stripe.PaymentIntent.create(
-                amount=total_amount,
+                amount=calculated_total_amount,
                 currency='eur',
                 automatic_payment_methods={'enabled': True},
             )
-            print("Payment intent created:", payment_intent)  
+            print("Payment intent created:", payment_intent)
             return JsonResponse({'client_secret': payment_intent.client_secret})
         except (Exception, stripe.error.CardError) as e:
             error_message = str(e) if isinstance(e, Exception) else e.user_message
-            print("Error:", error_message)  
+            print("Error:", error_message)
             return JsonResponse({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
+
+
+#####################################
+######### Stripe Webhooks  ##########
+#####################################
+
+endpoint_secret = os.environ.get('STRIPE_WEBHOOK_SECRET')
+
+@csrf_exempt
+def stripe_webhook(request):
+    payload = request.body
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    event = None
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload, sig_header, endpoint_secret
+        )
+    except ValueError as e:
+        return Response(status=400)
+    except stripe.error.SignatureVerificationError as e:
+        return Response(status=400)
+    
+    if event['type'] == 'payment_intent.succeeded':
+        payment_intent = event['data']['object']
+    else:
+      print('Unhandled event type {}'.format(event['type']))
+
+    
+    return Response(status=200, payment_intent=payment_intent)
 
 

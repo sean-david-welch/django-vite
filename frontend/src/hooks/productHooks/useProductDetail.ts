@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import fetchData from '../utils/fetchData';
+import fetchData from '../../utils/fetchData';
 
 function useProductDetail() {
     const { productId } = useParams<{ productId: string }>();

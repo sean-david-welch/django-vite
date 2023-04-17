@@ -4,6 +4,7 @@ import {
     LinkAuthenticationElement,
     useStripe,
     useElements,
+    AddressElement,
 } from '@stripe/react-stripe-js';
 import { PaymentIntent } from '@stripe/stripe-js';
 
@@ -81,6 +82,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
             <form id="payment-form" className="stripe" onSubmit={handleSubmit}>
                 <h2 className="section-heading">Stripe Checkout Form</h2>
                 <LinkAuthenticationElement id="link-authentication-element" />
+                {/* <AddressElement id="address-element" /> */}
                 <PaymentElement id="payment-element" />
                 <button
                     disabled={isLoading || !stripe || !elements}

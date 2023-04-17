@@ -3,7 +3,7 @@ import CartView from '../components/cart/CartView';
 import SectionHeading from '../components/navigation/SectionHeading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useCartContext } from '../hooks/useCartContext';
+import { useCartContext } from '../hooks/cart/useCartContext';
 
 export const Cart = () => {
     const { cart } = useCartContext();

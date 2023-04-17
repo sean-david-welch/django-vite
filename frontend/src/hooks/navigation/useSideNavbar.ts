@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { UseSideNavbar } from '../types/Types';
+import { UseSideNavbar } from '../../types/Types';
 
 const useSideNavbar = (): UseSideNavbar => {
     const [isOpen, setIsOpen] = useState<boolean>(false);

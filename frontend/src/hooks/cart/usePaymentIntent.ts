@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import fetchData from '../utils/fetchData';
+import fetchData from '../../utils/fetchData';
 import { useCartContext } from './useCartContext';
 
 const stripePromise = loadStripe(

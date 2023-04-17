@@ -1,9 +1,9 @@
-import useProductDetail from '../../hooks/useProductDetail';
+import useProductDetail from '../../hooks/productHooks/useProductDetail';
 import NavButton from '../navigation/NavButton';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { useCartContext } from '../../hooks/useCartContext';
+import { useCartContext } from '../../hooks/cart/useCartContext';
 
 const productDetail = () => {
     const { product, loading } = useProductDetail();

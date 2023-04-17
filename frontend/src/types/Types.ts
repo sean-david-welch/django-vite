@@ -45,6 +45,7 @@ export interface CartItem {
     price: number;
     image: string;
     quantity: number;
+    updated?: boolean;
 }
 
 export interface CartItemProps {

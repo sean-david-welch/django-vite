@@ -29,7 +29,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         setCart(
             cart.map(item => {
                 if (item.id === id) {
-                    return { ...item, quantity };
+                    return { ...item, quantity, updated: true };
                 }
                 return item;
             })
