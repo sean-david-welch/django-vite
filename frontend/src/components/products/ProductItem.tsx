@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useCallback } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartPlus, faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -14,7 +14,7 @@ const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
     useIntersectionObserver(productCardRef);
     const { addToCart } = useCartContext();
 
-    const handleAddToCart = () => {
+    const handleAddToCart = useCallback(() => {
         addToCart({
             id: product.id,
             name: product.name,
@@ -22,7 +22,7 @@ const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
             image: product.image,
             quantity: 1,
         });
-    };
+    }, [addToCart, product.id, product.name, product.price, product.image]);
 
     return (
         <li key={product.id}>

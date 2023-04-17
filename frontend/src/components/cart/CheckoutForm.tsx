@@ -4,7 +4,6 @@ import {
     LinkAuthenticationElement,
     useStripe,
     useElements,
-    AddressElement,
 } from '@stripe/react-stripe-js';
 import { PaymentIntent } from '@stripe/stripe-js';
 

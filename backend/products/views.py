@@ -40,7 +40,7 @@ secret_key = os.environ.get('STRIPE_SECRET_TEST_KEY')
 stripe.api_key = secret_key
 
 class ProcessPayment(APIView):
-    def post(self, request, *args, **kwargs):
+    def post(self, request):
         data = json.loads(request.body)
         cart = data.get('cart', [])
 

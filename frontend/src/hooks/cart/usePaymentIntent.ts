@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import fetchData from '../../utils/fetchData';
 import { useCartContext } from './useCartContext';
@@ -11,7 +11,9 @@ export const usePaymentIntent = (total: number) => {
     const [clientSecret, setClientSecret] = useState('');
     const cartContext = useCartContext();
 
-    const fetchPaymentIntent = async () => {
+    const fetchPaymentIntent = useCallback(async () => {
+        console.log('fetchPaymentIntent called');
+
         if (cartContext.cart.length === 0) {
             return;
         }
@@ -20,9 +22,6 @@ export const usePaymentIntent = (total: number) => {
             (acc, item) => acc + item.price * item.quantity,
             0
         );
-
-        console.log('Cart data sent to the backend:', cartContext.cart);
-        console.log('Total amount sent to the backend:', totalAmount);
 
         try {
             const data = await fetchData(
@@ -43,9 +42,10 @@ export const usePaymentIntent = (total: number) => {
         } catch (error) {
             console.log(error);
         }
-    };
+    }, [cartContext.cart]);
 
     useEffect(() => {
+        console.log('useEffect called');
         fetchPaymentIntent();
     }, [cartContext.cart, total]);
 

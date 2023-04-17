@@ -1,3 +1,5 @@
+import React, { useRef, useCallback } from 'react';
+
 import useProductDetail from '../../hooks/productHooks/useProductDetail';
 import NavButton from '../navigation/NavButton';
 
