@@ -1,4 +1,6 @@
 export const BASE_URL =
-    typeof process !== 'undefined' && process.env.REACT_APP_BASE_URL
-        ? process.env.REACT_APP_BASE_URL
-        : 'http://127.0.0.1:8000';
+    import.meta.env.VITE_APP_BASE_URL || import.meta.env.VITE_APP_FALLBACK_URL;
+
+export const FRONTEND_URL =
+    import.meta.env.VITE_APP_FRONTEND_URL ||
+    import.meta.env.VITE_APP_FRONTEND_FALLBACK_URL;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FRONTEND_URL } from '../../utils/config';
 import {
     PaymentElement,
     LinkAuthenticationElement,
@@ -70,7 +71,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
         const { error } = await stripe.confirmPayment({
             confirmParams: {
-                return_url: 'http://localhost:3000',
+                return_url: `${FRONTEND_URL}payment-success`,
                 receipt_email: email,
             },
             elements,

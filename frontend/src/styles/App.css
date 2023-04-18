@@ -12,6 +12,7 @@
 
 @import './cart/cart.css';
 @import './cart/stripe.css';
+@import './cart/success.css';
 
 .App {
     max-width: 100vw;
