@@ -22,7 +22,7 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
         setTotal(newTotal);
     }, [cart]);
 
-    const { clientSecret, stripePromise, options } = usePaymentIntent(total);
+    const { clientSecret, stripePromise, options } = usePaymentIntent();
 
     const handleRemove = (id: string) => {
         removeFromCart(id);
@@ -66,6 +66,7 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
                     {clientSecret && (
                         <Elements stripe={stripePromise} options={options}>
                             <CheckoutForm
+                                key={clientSecret}
                                 clientSecret={clientSecret}
                                 totalAmount={total}
                             />

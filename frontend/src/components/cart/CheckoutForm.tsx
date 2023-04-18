@@ -22,9 +22,15 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
     const [email, setEmail] = useState<string>('');
     const [message, setMessage] = useState<string | null>(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [paymentAttempted, setPaymentAttempted] = useState(false);
 
     useEffect(() => {
-        if (!stripe || !clientSecret) {
+        if (!stripe || !clientSecret || !paymentAttempted) {
+            return;
+        }
+
+        if (!clientSecret) {
+            setMessage(null);
             return;
         }
 
@@ -48,23 +54,24 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
                     break;
             }
         });
-    }, [stripe, clientSecret]);
+    }, [stripe, clientSecret, paymentAttempted]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
-        if (!stripe || !elements) {
+        if (!stripe || !elements || !clientSecret) {
             return;
         }
 
         setIsLoading(true);
+        setPaymentAttempted(true);
 
         const { error } = await stripe.confirmPayment({
-            elements,
             confirmParams: {
                 return_url: 'http://localhost:3000',
                 receipt_email: email,
             },
+            elements,
         });
 
         if (error.message) {
@@ -81,7 +88,6 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
             <form id="payment-form" className="stripe" onSubmit={handleSubmit}>
                 <h2 className="section-heading">Stripe Checkout Form</h2>
                 <LinkAuthenticationElement id="link-authentication-element" />
-                {/* <AddressElement id="address-element" /> */}
                 <PaymentElement id="payment-element" />
                 <button
                     disabled={isLoading || !stripe || !elements}
