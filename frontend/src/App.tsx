@@ -11,8 +11,8 @@ import ProductPage from './pages/ProductPage';
 function App() {
     return (
         <div className="App">
-            <CartProvider>
-                <Router>
+            <Router>
+                <CartProvider>
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
@@ -21,8 +21,8 @@ function App() {
                         <Route path="/cart" element={<Cart />} />
                         <Route path="/login" element={<Login />} />
                     </Routes>
-                </Router>
-            </CartProvider>
+                </CartProvider>
+            </Router>
         </div>
     );
 }

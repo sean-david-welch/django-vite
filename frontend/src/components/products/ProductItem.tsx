@@ -22,7 +22,7 @@ const ProductItem: React.FC<{ product: Product }> = ({ product }) => {
             image: product.image,
             quantity: 1,
         });
-    }, [addToCart, product.id, product.name, product.price, product.image]);
+    }, [addToCart]);
 
     return (
         <li key={product.id}>

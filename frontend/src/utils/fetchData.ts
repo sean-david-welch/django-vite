@@ -11,12 +11,13 @@ const fetchData = async (endpoint: string, options?: FetchDataOptions) => {
 
         validateContentType(response.headers.get('content-type'), endpoint);
 
-        const data = await response.json();
-
         if (!response.ok) {
-            throw new Error(data.message);
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Error fetching data');
         }
 
+        const data = await response.json();
+        console.log(`Data fetched from ${endpoint}`, data);
         return data;
     } catch (err) {
         console.error(`Error fetching data from ${endpoint}`, err);

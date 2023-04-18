@@ -1,4 +1,3 @@
-// src/utils/useProductList.tsx
 import { useEffect, useState } from 'react';
 import fetchData from '../../utils/fetchData';
 

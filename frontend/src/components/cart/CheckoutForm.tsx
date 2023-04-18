@@ -78,6 +78,8 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
 
         if (error.message) {
             setMessage(error.message);
+            setIsLoading(false);
+            return;
         } else {
             setMessage('An unexpected error occurred.');
         }

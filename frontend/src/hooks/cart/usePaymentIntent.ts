@@ -12,10 +12,8 @@ export const usePaymentIntent = () => {
     const [clientSecret, setClientSecret] = useState<string | null>('');
     const cartContext = useCartContext();
 
-    const debouncedFetchPaymentIntent = useCallback(
+    const fetchPaymentIntent = useCallback(
         debounce(async () => {
-            console.log('fetchPaymentIntent called');
-
             if (cartContext.cart.length === 0) {
                 return;
             }
@@ -24,9 +22,6 @@ export const usePaymentIntent = () => {
                 (acc, item) => acc + item.price * item.quantity,
                 0
             );
-
-            console.log('Cart content:', cartContext.cart);
-            console.log('Total amount:', totalAmount);
 
             try {
                 const data = await fetchData(
@@ -52,14 +47,13 @@ export const usePaymentIntent = () => {
     );
 
     useEffect(() => {
-        debouncedFetchPaymentIntent();
-    }, [cartContext.cart, debouncedFetchPaymentIntent]);
+        fetchPaymentIntent();
+    }, [cartContext.cart, fetchPaymentIntent]);
 
     useEffect(() => {
         if (!clientSecret) {
             return;
         }
-        console.log('Client secret updated:', clientSecret);
     }, [clientSecret]);
 
     const options = clientSecret

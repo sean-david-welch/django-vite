@@ -37,8 +37,6 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
         if (!isNaN(newQuantity) && newQuantity >= 1) {
             updateQuantity(id, newQuantity);
             updateClientSecret(null);
-            console.log('Updated cart:', cart);
-            console.log('Updated clientSecret:', clientSecret);
         }
     };
 

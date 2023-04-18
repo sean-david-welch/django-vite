@@ -8,6 +8,8 @@ import os
 import json
 import stripe
 import stripe.error
+from stripe.error import InvalidRequestError
+
 
 from .utils import calculate_cart_total
 
@@ -60,6 +62,17 @@ class ProcessPayment(APIView):
             error_message = str(e) if isinstance(e, Exception) else e.user_message
             print("Error:", error_message)
             return JsonResponse({'error': error_message}, status=status.HTTP_400_BAD_REQUEST)
+
+class CancelPayment(APIView):
+    def post(self, request):
+        payment_intent_id = request.data.get("payment_intent_id")
+        print(f"Attempting to cancel PaymentIntent: {payment_intent_id}")
+        try:
+            stripe.PaymentIntent.cancel(payment_intent_id)
+            return Response({"status": "canceled"})
+        except InvalidRequestError as e:
+            return Response({"error": str(e)}, status=400)
+
 
 
 #####################################
