@@ -22,7 +22,8 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
         setTotal(newTotal);
     }, [cart]);
 
-    const { clientSecret, stripePromise, options } = usePaymentIntent();
+    const { clientSecret, stripePromise, options, updateClientSecret } =
+        usePaymentIntent();
 
     const handleRemove = (id: string) => {
         removeFromCart(id);
@@ -35,6 +36,9 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
         const newQuantity = parseInt(event.target.value);
         if (!isNaN(newQuantity) && newQuantity >= 1) {
             updateQuantity(id, newQuantity);
+            updateClientSecret(null);
+            console.log('Updated cart:', cart);
+            console.log('Updated clientSecret:', clientSecret);
         }
     };
 
@@ -69,6 +73,7 @@ const CartView: React.FC<CartViewProps> = ({ renderSectionHeading }) => {
                                 key={clientSecret}
                                 clientSecret={clientSecret}
                                 totalAmount={total}
+                                updateClientSecret={updateClientSecret}
                             />
                         </Elements>
                     )}

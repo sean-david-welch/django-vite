@@ -9,7 +9,7 @@ const stripePromise = loadStripe(
 );
 
 export const usePaymentIntent = () => {
-    const [clientSecret, setClientSecret] = useState('');
+    const [clientSecret, setClientSecret] = useState<string | null>('');
     const cartContext = useCartContext();
 
     const debouncedFetchPaymentIntent = useCallback(
@@ -47,12 +47,11 @@ export const usePaymentIntent = () => {
             } catch (error) {
                 console.log(error);
             }
-        }, 1000),
+        }, 10),
         [cartContext.cart]
     );
 
     useEffect(() => {
-        console.log('useEffect called');
         debouncedFetchPaymentIntent();
     }, [cartContext.cart, debouncedFetchPaymentIntent]);
 
@@ -69,5 +68,10 @@ export const usePaymentIntent = () => {
           }
         : {};
 
-    return { clientSecret, stripePromise, options };
+    return {
+        clientSecret,
+        stripePromise,
+        options,
+        updateClientSecret: setClientSecret,
+    };
 };

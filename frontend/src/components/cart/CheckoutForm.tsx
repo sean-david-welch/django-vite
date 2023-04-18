@@ -10,11 +10,13 @@ import { PaymentIntent } from '@stripe/stripe-js';
 interface CheckoutFormProps {
     clientSecret: string | null;
     totalAmount: number;
+    updateClientSecret: (clientSecret: string | null) => void;
 }
 
 const CheckoutForm: React.FC<CheckoutFormProps> = ({
     clientSecret,
     totalAmount,
+    updateClientSecret,
 }) => {
     const stripe = useStripe();
     const elements = useElements();
